@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="db" uuid="c3306d05-96a0-4a78-90f1-6a19bc5ee8b5">
+    <data-source source="LOCAL" name="db [2]" uuid="e600c86e-a22f-49cd-a2e5-ad52d8e7beb9">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\Django\ShoppickNewProject\db.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\CWG\Desktop\DJANGO\projects\other\Shoppick\db.sqlite3</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>
@@ -13,11 +13,11 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="db [2]" uuid="e600c86e-a22f-49cd-a2e5-ad52d8e7beb9">
+    <data-source source="LOCAL" name="db" uuid="729489b6-e5d3-41ad-bd2b-edad14298fbb">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\CWG\Desktop\DJANGO\projects\other\Shoppick\db.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:D:\Django\ShoppickNewProject\db.sqlite3</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>

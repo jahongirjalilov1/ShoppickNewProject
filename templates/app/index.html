@@ -3915,7 +3915,7 @@ h1.thank-you {
 		<!-- lightbox css -->
         <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
 		<!-- style css -->
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="../../app/static/style.css">
 		<!-- responsive css -->
         <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 		<!-- modernizr css -->
@@ -3988,11 +3988,9 @@ h1.thank-you {
 							<div class="main-menu pull-right">
 								<nav>
 									<ul>
-										<li><a href="index.html">home</a>
+										<li><a href="{% url 'index' %}">home</a>
 											<ul class="submenu">
-												<li class="submenu-title"><a href="#">Home pages</a></li>
-												<li><a href="index.html">Homepage Version 1</a></li>
-												<li><a href="index-2.html">Homepage Version 2</a></li>
+
 											</ul>
 										</li>
 										<li><a href="shop.html">mens</a></li>

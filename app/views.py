@@ -106,7 +106,7 @@ def registerPage(request):
     context = {
         'form': form
     }
-    return render(request, 'registration/register.html', context)
+    return render(request, 'app/auth/../templates/app/registration/register.html', context)
 
 
 def loginPage(request):
@@ -125,7 +125,7 @@ def loginPage(request):
 
     context = {}
 
-    return render(request, 'registration/login.html', context)
+    return render(request, 'app/auth/../templates/app/registration/login.html', context)
 
 
 

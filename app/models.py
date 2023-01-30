@@ -15,6 +15,12 @@ class Category(MPTTModel):
         return self.title
 
 
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural ='Categories'
+
+
+
 class Product(models.Model):
     class ChoiceSize(models.TextChoices):
         XS = 'XS'
@@ -37,10 +43,15 @@ class Product(models.Model):
     text = models.TextField()
     size = models.CharField(max_length=155, choices=ChoiceSize.choices, default=ChoiceSize.M)
     color = models.CharField(max_length=155, choices=ChoiceColor.choices, default=ChoiceColor.WHITE)
-    quantity = models.IntegerField(default=1)
-    rivew = models.IntegerField(default=1)
+    riview = models.IntegerField(default=1)
     price = models.FloatField()
     category = models.ForeignKey('app.Category', on_delete=models.CASCADE)
+
+
+    class Meta:
+        verbose_name = "Product"
+        verbose_name_plural = 'Products'
+
 
 
 class Women(Product):
@@ -48,9 +59,19 @@ class Women(Product):
         TOMATO = 'TOMATO'
 
 
+    class Meta:
+        verbose_name = 'Woman'
+        verbose_name_plural = 'Women'
+
+
+
 class Men(Women):
     class ChoiceColor(models.TextChoices):
         BROWN = 'BROWN'
+
+    class Meta:
+        verbose_name = 'Man'
+        verbose_name_plural = 'Men'
 
 
 # class UserManager(BaseUserManager):
