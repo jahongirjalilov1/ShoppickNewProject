@@ -3923,7 +3923,7 @@ h1.thank-you {
     </head>
     <body>
         <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
 		<!-- HEADER-AREA START -->
@@ -3948,7 +3948,13 @@ h1.thank-you {
 						</div>
 						<div class="col-md-6 col-sm-6">
 							<div class="header-top-right pull-right">
+                                {% if user.is_authenticated %}
 								<ul>
+									<li><a href="{% url 'logout' %}">Log out <span><i class="sp-gear"></i></span></a>
+									</li>
+								</ul>
+                                {% else %}
+                                <ul>
 									<li><a href="#">Account <span><i class="sp-gear"></i></span></a>
 										<ul class="submenu">
 											<li><a href="{% url 'register' %}">Register</a></li>
@@ -3956,6 +3962,7 @@ h1.thank-you {
 										</ul>
 									</li>
 								</ul>
+                                {% endif %}
 								<div class="header-search">
 									<form action="#">
 										<input type="text" placeholder="Search..." />
@@ -4697,15 +4704,15 @@ h1.thank-you {
 									<h2>company</h2>
 									<ul>
 										<li><a href="#">Account</a></li>
-										<li><a href="#">Log in</a></li>
-										<li><a href="#">Regester</a></li>
+										<li><a href="{% url 'login' %}">Log in</a></li>
+										<li><a href="{% url 'register' %}">Regester</a></li>
 										<li><a href="{% url 'shop' %}">Shop</a></li>
 									</ul>
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-4 col-xs-12">
 								<div class="single-footer footer-message">
-									<form action="#">
+									<form action="#" method="post">
 										<h2>Quick contact</h2>
 										<div class="footer-message-box">
 											<input type="text" placeholder="your email address" />
@@ -4715,6 +4722,7 @@ h1.thank-you {
 									</form>
 								</div>
 							</div>
+
 						</div>
 					</div>
 				</div>
