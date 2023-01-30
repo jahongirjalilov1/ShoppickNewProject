@@ -15,10 +15,12 @@ from app.models import Product, Women, Men
 
 def index(request):
     products = Product.objects.all()
-    womens = Women.objects.all()
+    women = Women.objects.all()
+    men = Men.objects.all()
     context = {
         'products': products,
-        'womens': womens
+        'women': women,
+        'men': men
     }
     return render(request, 'app/index.html', context)
 
