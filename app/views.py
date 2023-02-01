@@ -31,6 +31,13 @@ class ShopPage(ListView):
     model = Product
     queryset = Product.objects.all().order_by()
     context_object_name = 'product'
+    paginate_by = 6
+
+    def get_queryset(self):
+        title = self.request.GET.get('title')
+        if title:
+            return Product.objects.filter(title__icontains=title)
+        return Product.objects.all()
 
 
 class WomenPage(ListView):
@@ -38,6 +45,13 @@ class WomenPage(ListView):
     model = Women
     queryset = Women.objects.all().order_by()
     context_object_name = 'women'
+    paginate_by = 6
+
+    def get_queryset(self):
+        title = self.request.GET.get('title')
+        if title:
+            return Product.objects.filter(title__icontains=title)
+        return Product.objects.all()
 
 
 class MenPage(ListView):
@@ -45,6 +59,13 @@ class MenPage(ListView):
     model = Men
     queryset = Men.objects.all().order_by()
     context_object_name = 'men'
+    paginate_by = 6
+
+    def get_queryset(self):
+        title = self.request.GET.get('title')
+        if title:
+            return Product.objects.filter(title__icontains=title)
+        return Product.objects.all()
 
 def contact(request):
     products = Product.objects.all()
@@ -126,6 +147,18 @@ def loginPage(request):
     context = {}
 
     return render(request, 'app/auth/../templates/app/registration/login.html', context)
+
+
+def product_details(request, product_id):
+    product = Product.objects.filter(id=product_id).first()
+    context = {
+        'product': product
+    }
+    return render(request, 'app/product_detail.html', context)
+
+def about(request):
+    return render(request, 'app/auth/About.html')
+
 
 
 
