@@ -12,4 +12,5 @@ urlpatterns = [
     path('register/', registerPage, name='register'),
     path('product-details/<int:product_id>', product_details, name='product-details'),
     path('about/', about, name='about'),
+    path('create-product/', create_product, name='create_product')
 ]

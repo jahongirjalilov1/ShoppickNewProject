@@ -11,7 +11,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView
 
 from app.forms import ProductModelForm, send_email, CreateUserForm
-from app.models import Product, Women, Men
+from app.models import Product, Women, Men, Category
 
 
 def index(request):
@@ -79,40 +79,6 @@ def contact(request):
     }
     return render(request, 'app/contact.html', context)
 
-
-# def login_view(request):
-#     form = LoginForm()
-#     if request.method == 'POST':
-#         form = LoginForm(request.POST)
-#         if form.is_valid():
-#             user = authenticate(email=form.cleaned_data['email'], password=form.cleaned_data['password'])
-#             if user:
-#                 login(request, user)
-#                 return redirect('index')
-#     context = {
-#         'form': form
-#     }
-#     return render(request, 'app/auth/login.html', context)
-
-
-# def register_view(request):
-#     form = RegisterForm()
-#     if request.method == "POST":
-#         form = RegisterForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             send_email(form.data.get('email'), request, 'register')
-#             messages.add_message(
-#                 request,
-#                 level=messages.INFO,
-#                 message='Xabar yuborildi, emailingizni tekshiring'
-#             )
-#             return redirect('register')
-#     context = {
-#         'form': form
-#     }
-#     return render(request, 'app/auth/register.html', context)
-
 def registerPage(request):
     form = CreateUserForm()
 
@@ -127,7 +93,7 @@ def registerPage(request):
     context = {
         'form': form
     }
-    return render(request, 'app/auth/../templates/app/registration/register.html', context)
+    return render(request, 'registration/register.html', context)
 
 
 def loginPage(request):
@@ -146,13 +112,17 @@ def loginPage(request):
 
     context = {}
 
-    return render(request, 'app/auth/../templates/app/registration/login.html', context)
+    return render(request, 'registration/login.html', context)
 
 
 def product_details(request, product_id):
     product = Product.objects.filter(id=product_id).first()
+    products = Product.objects.all()
+    category = Category.objects.all()
     context = {
-        'product': product
+        'product': product,
+        'products': products,
+        'category': category
     }
     return render(request, 'app/product_detail.html', context)
 
@@ -160,6 +130,22 @@ def about(request):
     return render(request, 'app/auth/About.html')
 
 
+def create_product(request):
+    category = Category.objects.all()
+    if request.method == 'POST':
+        form = ProductModelForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+        return redirect('index')
+    form = ProductModelForm()
+    context = {
+        'form': form,
+        'sizes': Product.ChoiceSize,
+        'colors': Product.ChoiceColor,
+        'price': Product.price,
+        'categories': category
+    }
+    return render(request, 'app/create-product.html', context)
 
 
 

@@ -3992,6 +3992,7 @@ h1.thank-you {
 										<li><a href="{% url 'men' %}">mens</a></li>
 										<li><a href="{% url 'women' %}">womens</a></li>
 										<li><a href="{% url 'shop' %}">shop</a></li>
+                                        <li><a href="{% url 'create_product' %}">Create Product</a></li>
 										<!--
 										<li><a href="about.html">about</a></li> -->
 										<li><a href="#">Pages</a>
@@ -4002,6 +4003,7 @@ h1.thank-you {
 												<li><a href="{% url 'register' %}">Register</a></li>
 												<li><a href="{% url 'about' %}">About</a></li>
 												<li><a href="{% url 'contact' %}">Contact</a></li>
+                                                <li><a href="{% url 'create_product' %}">Create Product</a></li>
 											</ul>
 										</li>
 										<li><a href="{% url 'contact' %}">contact</a></li>
@@ -4028,16 +4030,14 @@ h1.thank-you {
 										<li><a href="#">Pages</a>
 											<ul class="submenu">
 												<li class="submenu-title"><a href="#">All pages</a></li>
-												<li><a href="shop.html">Shop</a></li>
-												<li><a href="shop-list.html">Shop-List</a></li>
-												<li><a href="checkout.html">Checkout</a></li>
+												<li><a href="{% url 'shop' %}">Shop</a></li>
 												<li><a href="{% url 'login' %}">Login</a></li>
 												<li><a href="{% url 'register' %}">Register</a></li>
-												<li><a href="about.html">About</a></li>
-												<li><a href="contact.html">Contact Us</a></li>
+												<li><a href="{% url 'about' %}">About</a></li>
 											</ul>
 										</li>
-										<li><a href="contact.html">contact</a></li>
+										<li><a href="{% url 'contact' %}">contact</a></li>
+                                        <li href="{% url 'create_product' %}">Create Product</li>
 									</ul>
 								</nav>
 							</div>
@@ -4097,7 +4097,7 @@ h1.thank-you {
 					<!-- Single-product start -->
 					<div class="single-product">
 						<div class="product-photo">
-							<a href="#">
+							<a href="{% url 'product-details' product.id %}">
 								<img class="primary-photo" src="{{ product.image.url }}" style="height: 300px" alt="" />
 								<img class="secondary-photo" src="{{ product.image.url }}" style="height: 300px" alt="" />
 							</a>
@@ -4199,7 +4199,7 @@ h1.thank-you {
 							<div class="col-md-4 col-sm-4 col-xs-12">
 								<div class="single-footer footer-logo">
 									<img src="{% static 'img/logo.png' %}" alt="" />
-									<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+									<p>IT City shopping part recommends to you to register to this site and buy quality clothes.</p>
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-4 col-xs-12">
@@ -4230,13 +4230,12 @@ h1.thank-you {
 										<li><a href="#">Account</a></li>
 										<li><a href="{% url 'login' %}">Log in</a></li>
 										<li><a href="{% url 'register' %}">Regester</a></li>
-										<li><a href="{% url 'shop' %}">Shop</a></li>
 									</ul>
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-4 col-xs-12">
 								<div class="single-footer footer-message">
-									<form action="#" method="post">
+									<form action="#">
 										<h2>Quick contact</h2>
 										<div class="footer-message-box">
 											<input type="text" placeholder="your email address" />
@@ -4246,7 +4245,6 @@ h1.thank-you {
 									</form>
 								</div>
 							</div>
-
 						</div>
 					</div>
 				</div>
@@ -4256,15 +4254,15 @@ h1.thank-you {
 					<div class="row">
 						<div class="col-md-6 col-sm-6 col-xs-12">
 							<div class="copyright-brief">
-								<p>Copyright &copy; <a href="http://www.codecarnival.net/">Codecarnival</a> All right reserved</p>
+								<p>Copyright &copy; <a href="#">Codecarnival</a> All right reserved</p>
 							</div>
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-12">
 							<div class="footer-social text-right">
-								<a href="#"><i class="sp-facebook"></i></a>
-								<a href="#"><i class="sp-twitter"></i></a>
-								<a href="#"><i class="sp-linkedin"></i></a>
-								<a href="#"><i class="sp-google"></i></a>
+								<a href="https://www.facebook.com/"><i class="sp-facebook"></i></a>
+								<a href="https://twitter.com/home"><i class="sp-twitter"></i></a>
+								<a href="https://www.linkedin.com/"><i class="sp-linkedin"></i></a>
+								<a href="https://www.google.com/"><i class="sp-google"></i></a>
 							</div>
 						</div>
 					</div>

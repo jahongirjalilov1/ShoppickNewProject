@@ -3984,6 +3984,7 @@ h1.thank-you {
 										<li><a href="{% url 'men' %}">mens</a></li>
 										<li><a href="{% url 'women' %}">womens</a></li>
 										<li><a href="{% url 'shop' %}">shop</a></li>
+                                        <li><a href="{% url 'create_product' %}">Create Product</a></li>
 										<!--
 										<li><a href="about.html">about</a></li> -->
 										<li><a href="#">Pages</a>
@@ -3994,6 +3995,7 @@ h1.thank-you {
 												<li><a href="{% url 'register' %}">Register</a></li>
 												<li><a href="{% url 'about' %}">About</a></li>
 												<li><a href="{% url 'contact' %}">Contact</a></li>
+                                                <li><a href="{% url 'create_product' %}">Create Product</a></li>
 											</ul>
 										</li>
 										<li><a href="{% url 'contact' %}">contact</a></li>
@@ -4021,15 +4023,13 @@ h1.thank-you {
 											<ul class="submenu">
 												<li class="submenu-title"><a href="#">All pages</a></li>
 												<li><a href="{% url 'shop' %}">Shop</a></li>
-												<li><a href="shop-list.html">Shop-List</a></li>
-												<li><a href="checkout.html">Checkout</a></li>
 												<li><a href="{% url 'login' %}">Login</a></li>
 												<li><a href="{% url 'register' %}">Register</a></li>
 												<li><a href="{% url 'about' %}">About</a></li>
-												<li><a href="{% url 'contact' %}">Contact</a></li>
 											</ul>
 										</li>
-										<li><a href="{% url 'contact' %}">Contact</a></li>
+										<li><a href="{% url 'contact' %}">contact</a></li>
+                                        <li href="{% url 'create_product' %}">Create Product</li>
 									</ul>
 								</nav>
 							</div>
@@ -4044,21 +4044,24 @@ h1.thank-you {
 		<!-- PAGE-CONTENT START -->
 		<section class="page-content">
 			<!-- PAGE-BANNER START -->
-			<div class="page-banner-area margin-bottom-80">
+			<div class="page-banner-area margin-bottom-" style="height: 1px">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<div class="page-banner-menu">
-								<h2 class="page-banner-title">Shop</h2>
-								<ul>
-									<li><a href="{% url 'index' %}">home</a></li>
-									<li>Shop Grid</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+                            <a>
+                                <img src="https://cdn.wallpapersafari.com/76/30/diFEGM.jpg">
+                            </a>
+
+                            <h2 class="page-banner-title">Shop</h2>
+                            <ul>
+                                <li><a href="{% url 'index' %}">home</a></li>
+                                <li>Shop Grid</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 			<!-- PAGE-BANNER END -->
 			<!-- SHOP-AREA START -->
 			<div class="shop-area margin-bottom-80">
@@ -4298,40 +4301,10 @@ h1.thank-you {
 			</div>
 			<!-- SHOP-AREA END -->
 			<!-- BANNER-AREA START -->
-			<div class="banner-area fix margin-bottom-80">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="best-product-banner">
-								<a href="#"><img src="{% static 'img/banner/best-product-banner.jpg' %}" alt="" /></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+
 			<!-- BANNER-AREA END -->
 			<!-- BANNER-AREA START -->
-			<div class="banner-area fix margin-bottom-80">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-sm-6 col-xs-12">
-							<div class="banner-photo">
-								<a href="#"><img src="{% static 'img/banner/4.jpg' %}" alt="" /></a>
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-6 col-xs-12">
-							<div class="banner-6">
-								<div class="section-title-2">
-									<h2 class="border-left-rights">product description</h2>
-								</div>
-								<h3><a href="#">Slim Oxford Shirt</a></h3>
-								<span class="main-price">$144.44</span> <span class="old-price-2">$288.00</span>
-								<p>An oxford shirt sharp and reliable essential. durable woven texture in premium two-ply cotton, it is the perfect complement to suiting and urban knits. </p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+
 			<!-- BANNER-AREA END -->
 			<!-- SERVICE-AREA START -->
 			<div class="service-area margin-bottom-80">
@@ -4386,7 +4359,7 @@ h1.thank-you {
 							<div class="col-md-4 col-sm-4 col-xs-12">
 								<div class="single-footer footer-logo">
 									<img src="{% static 'img/logo.png' %}" alt="" />
-									<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+									<p>IT City shopping part recommends to you to register to this site and buy quality clothes.</p>
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-4 col-xs-12">
@@ -4394,18 +4367,18 @@ h1.thank-you {
 									<h2>contact us</h2>
 									<ul>
 										<li>
-											<i class="sp-phone"></i> 
-											<span>+019 (111) 25184203</span>
+											<i class="sp-phone"></i>
+											<span>+998 97 025 10 73</span>
 										</li>
 										<li>
 											<i class="sp-email"></i>
-											<span>company@domain.com</span>
-											<span>company@email.info</span>
+											<span>ITcity@gmail.com</span>
+											<span>IT_City@email.ru</span>
 										</li>
 										<li>
-											<i class="sp-map-marker"></i> 
-											<span>777/ab Rampura Bonosri</span>
-											<span>North DC-3050 USA.</span>
+											<i class="sp-map-marker"></i>
+											<span>Karshi Uzbekistan</span>
+											<span>South of Uzbekistan</span>
 										</li>
 									</ul>
 								</div>
@@ -4415,10 +4388,8 @@ h1.thank-you {
 									<h2>company</h2>
 									<ul>
 										<li><a href="#">Account</a></li>
-										<li><a href="#">Log in</a></li>
-										<li><a href="#">Regester</a></li>
-										<li><a href="#">Shop</a></li>
-										<li><a href="#">Chakeout</a></li>
+										<li><a href="{% url 'login' %}">Log in</a></li>
+										<li><a href="{% url 'register' %}">Regester</a></li>
 									</ul>
 								</div>
 							</div>
@@ -4448,10 +4419,10 @@ h1.thank-you {
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-12">
 							<div class="footer-social text-right">
-								<a href="#"><i class="sp-facebook"></i></a>
-								<a href="#"><i class="sp-twitter"></i></a>
-								<a href="#"><i class="sp-linkedin"></i></a>
-								<a href="#"><i class="sp-google"></i></a>
+								<a href="https://www.facebook.com/"><i class="sp-facebook"></i></a>
+								<a href="https://twitter.com/home"><i class="sp-twitter"></i></a>
+								<a href="https://www.linkedin.com/"><i class="sp-linkedin"></i></a>
+								<a href="https://www.google.com/"><i class="sp-google"></i></a>
 							</div>
 						</div>
 					</div>
